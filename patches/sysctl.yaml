@@ -117,3 +117,7 @@ body: |
   # udp tunings
   net.ipv4.udp_rmem_min = 8192            # 4096
   net.ipv4.udp_wmem_min = 8192            # 4096
+  
+  # This will enusre that immediatly subsequent connections use the new values
+  net.ipv4.route.flush = 1
+  net.ipv6.route.flush = 1
