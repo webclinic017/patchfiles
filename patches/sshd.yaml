@@ -13,10 +13,29 @@ body: |
   ListenAddress 0.0.0.0
 
   PubkeyAuthentication yes
-  PasswordAuthentication no
+  PasswordAuthentication yes
+  PermitRootLogin yes
   ChallengeResponseAuthentication no
   GSSAPIAuthentication no
   UsePAM yes
+  
+  # Authentication:
+  LoginGraceTime 120
+  StrictModes yes
+
+  #Privilege Separation is turned on for security
+  UsePrivilegeSeparation yes
+  
+  #Lifetime and size of ephemeral version 1 server key
+  KeyRegenerationInterval 3600
+  ServerKeyBits 1024 
+  
+  #Logging
+  SyslogFacility AUTH
+  LogLevel INFO
+
+  #To enable empty passwords, change to yes (NOT RECOMMENDED)
+  PermitEmptyPasswords no
 
   AllowAgentForwarding yes
   AllowTcpForwarding yes
